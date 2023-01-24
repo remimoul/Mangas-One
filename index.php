@@ -5,3 +5,7 @@ echo "salut";
 echo "cava myles ?";
 
 ?>
+
+<?php
+echo "jai mal";
+?>
