@@ -1,0 +1,5 @@
+<?php
+
+echo "BONJOUR LEQUIPE !!";
+
+?>
