@@ -1,10 +1,11 @@
 <?php
 
-$dbh = new PDO ('mysql:host=localhost; dbname=mangas_one','root', 'root');
+$dbh = new PDO ('mysql:host=localhost; dbname=mangas_one','root', '');
 
 // ***************************************************************************
 // ***************************************************************************
 //Make a selection
+/*
 $createAccount_user = $dbh->query("CREATE USER 'mylesjamesremi'@'localhost'
 IDENTIFIED BY 'mjr'");
 
@@ -19,4 +20,6 @@ TO 'mylesjamesremi'@'localhost' ")
 // // bobby peut tout faire sur la BD blog
 // GRANT ALL ON mangas_one.*
 //     TO 'mylesjamesremi'@'localhost';
+
+ */
 ?>
