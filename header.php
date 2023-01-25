@@ -2,6 +2,7 @@
     .bi {
         vertical-align: -.125em;
         fill: currentColor;
+    }
 </style>
 
 
