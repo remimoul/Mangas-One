@@ -1,6 +1,6 @@
 <?php
-
-$dbh = new PDO ('mysql:host=localhost; dbname=mangas_one','root', 'root');
+require_once('db_connect.php');
+// $dbh = new PDO ('mysql:host=localhost; dbname=mangas_one','root', 'root');
 
 // ***************************************************************************
 // ***************************************************************************
@@ -39,9 +39,10 @@ foreach ($query_user as $key) {
 // ***************************************************************************
 // ***************************************************************************
 //Create 'utilisateur'
+// $create_user = $dbh->query("INSERT INTO `utilisateur` (`nom`, `prenom`, `email`, `mot_de_passe`, `client`) VALUES\
+// ('Doe', 'John', 'johndoe@gmail.com', 'johndoe', 1)");
 $create_user = $dbh->query("INSERT INTO `utilisateur` (`nom`, `prenom`, `email`, `mot_de_passe`, `client`) VALUES\
 ('Doe', 'John', 'johndoe@gmail.com', 'johndoe', 1)");
-
 
 
 

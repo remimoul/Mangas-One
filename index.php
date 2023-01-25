@@ -15,7 +15,6 @@
 
 </head>
 <body class="light">
-
 <?php include_once('header.php'); ?>
 
 
