@@ -1,7 +1,13 @@
 <style>
    .lacouleur{
+       padding-top: 3vh;
        background: rgb(131,58,180);
        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(173,104,7,1) 100%);
+       height: 17vh;
+   }
+   #colorbutton {
+       color: white;
+       text-decoration: inherit;
    }
 </style>
 
@@ -29,12 +35,12 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="./index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                    <img  id="logoone" width="80" height="70" src="logo/logomangasone.svg">
+                    <img  id="logoone" width="80" height="70" src="logo/logomangasone.svg"> MANGAS ONE
                 </a>
 
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li>
-                        <a href="#" class="nav-link text-secondary">
+                        <a href="./index.php" class="nav-link text-white">
                             <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
 
                             Accueil
@@ -72,8 +78,8 @@
             <div class="text-end">
                 <button id="togglemode" type="button" class="btn btn-dark">Light</button>
 
-                <button type="button" class="btn btn-secondary"><a href="./connexion.php">Connexion</a> </button>
-                <button type="button" class="btn btn-success"><a href="./inscription.php">Inscription</a></button>
+                <button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./connexion.php">Connexion</a> </button>
+                <button  type="button" class="btn btn-success"><a id="colorbutton" href="./inscription.php">Inscription</a></button>
             </div>
         </div>
     </div>
