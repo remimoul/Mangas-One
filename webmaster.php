@@ -27,12 +27,15 @@ if(!isset($_SESSION)) {
 echo "PAGE WEBMASTER <br><br>";
 require_once('db_connect.php');
 
+<<<<<<< HEAD
 
 
 //$sql = "INSERT INTO mangas_one.produit (titre, prix, description, date, url_image, id_genre) VALUES
 //($titre, '25', 'Le jeune TaraTata décide de voyager pour faire découvrir sa musique','1998', 'image/image1', '1')";
 //$dbh =new PDO ('mysql:host=localhost; dbname=mangas_one','root', '');;
 //$create_product = $dbh->query($sql);
+=======
+>>>>>>> 7aecb2bd582c77e2a4194d487ca643bf8fd8f1c0
 
 $notIsset_produit = !isset($_GET['titre']) . !isset($_GET['prix']) . !isset($_GET['date']);
 if ($notIsset_produit){
@@ -45,27 +48,24 @@ if ($notIsset_produit){
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-9">
+<<<<<<< HEAD
 
             <h1 class="text-white mb-4">INSCRIPTION NOUVEAU PRODUIT</h1>
 
+=======
+        <h1>NOUVEAU PRODUIT</h1>
+>>>>>>> 7aecb2bd582c77e2a4194d487ca643bf8fd8f1c0
         <div class="card" style="border-radius: 15px;">
           <div class="card-body">
-
             <div class="row align-items-center pt-4 pb-3">
               <div class="col-md-3 ps-5">
-
                 <h6 class="mb-0">Titre</h6>
-
               </div>
               <div class="col-md-9 pe-5">
-
                 <input name="titre" type="text" class="form-control form-control-lg"  />
-
               </div>
             </div>
-
             <hr class="mx-n3">
-
             <div class="row align-items-center py-3">
               <div class="col-md-3 ps-5">
 
@@ -265,29 +265,10 @@ $dbh->query($sql);
 
 
 
-<?php
-/*
-            // include("http://localhost/www_sitenweb_com/mariageennormandie/dbgate.php"); //-> test externalisation connexion à SQL
-            $nom_post = $_SESSION['nom_post'];
-            $mdp_post = $_SESSION['mdp_post'];
-
-            /***** REQUETE SQL -> Sélectionner les données mdp et nom ***********#/
-            $requete = $bdd->prepare('SELECT DISTINCT Nom, mdp FROM partenaires WHERE Nom= :nom AND mdp= :mdp');
-            $requete->execute(array('nom' => $nom_post, 'mdp' => $mdp_post));
-            $requete_sql_nom = '';
-            $requete_sql_mdp = '';
-            while ($requete_fetch = $requete->fetch()) {
-                $requete_sql_nom = $requete_fetch['Nom'];
-                $requete_sql_mdp = $requete_fetch['mdp'];
-                echo '<br /> <p class="p1"> Identifiant :' . $requete_sql_nom . '  password :' . $requete_sql_mdp . ' </p><br />';
-            }
-            $requete->closeCursor();
-*/
-
-?>
-
-
 </body>
+<<<<<<< HEAD
 <?php include_once('footer.php'); ?>
+=======
+>>>>>>> 7aecb2bd582c77e2a4194d487ca643bf8fd8f1c0
 
 </html>
