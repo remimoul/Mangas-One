@@ -15,7 +15,8 @@
 
 </head>
 <body class="light">
-<?php include_once('header.php'); ?>
+
+<?php require_once ('header.php'); ?>
 
 
 <?php
@@ -27,5 +28,5 @@ echo "test";
 
 </body>
 
-<?php include_once('footer.php'); ?>
+<?php require_once('footer.php'); ?>
 </html>
