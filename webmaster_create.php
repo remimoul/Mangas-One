@@ -19,10 +19,11 @@ if(!isset($_SESSION)) {
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="light">
 
 
 <?php
+require_once('header.php');
 echo "CREATION D'ELEMENT BASE DE DONNEES<br><br>";
 require_once('db_connect.php');
 
@@ -36,7 +37,7 @@ if ($notIsset_produit){
     <!-- SECTION FORMULAIRE PRODUIT-->
     <section  id="webmaster-section" class="vh-100" style="background-color: #b8baba;">
 
-    <form action="" method="GET">
+    <form action="webmaster_create.php" method="GET">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-xl-9">
@@ -109,8 +110,23 @@ if ($notIsset_produit){
                     <h6 class="mb-0">Catégorie</h6>
                   </div>
                   <div class="col-md-9 pe-5">
-                    <input name="categorie"  class="form-control form-control-lg" type="number" min=1 max=3/>
-                  </div>
+                    <!-- <input name="categorie"  class="form-control form-control-lg" type="number" min=1 max=3/> -->
+
+                      <div>
+                        <input type="radio" name="categorie" id="Manga"  value="manga" checked>
+                        <label for="huey">Manga</label>
+                      </div>
+
+                      <div>
+                        <input type="radio" name="categorie" id="film"  value="video">
+                        <label for="video">Video</label>
+                      </div>
+
+                      <div>
+                        <input type="radio" name="categorie" id="serie"  value="serie">
+                        <label for="serie">Serie</label>
+                      </div>
+                <br>
                 </div>
 
                 <hr class="mx-n3">
@@ -130,22 +146,7 @@ if ($notIsset_produit){
 <?php
 } else{
 
-    // function VALID_DONNEES($donnees)
-    // {
-    //     $donnees = trim($donnees);
-    //     $donnees = stripslashes($donnees);
-    //     $donnees = htmlspecialchars($donnees);
-    //     $donnees = strip_tags($donnees);
-    //     return $donnees;
-    // }
 
-
-
-// RECUPERATION DES REPONSES FORMULAIRES
-// $titre_produit = VALID_DONNEES($_GET['titre']);
-// $prix_produit = VALID_DONNEES($_GET['prix']);
-// $description_produit = VALID_DONNEES($_GET['description']);
-// $date_produit = VALID_DONNEES($_GET['date']);
 
 $titre_produit = $_GET['titre'];
 $prix_produit = $_GET['prix'];
@@ -165,7 +166,7 @@ echo "catégorie : ". $categorie_produit ."<br>";
 
 
 //préparer la requête d'insertion SQL
-// $statement = $dbh->prepare("INSERT INTO mangas_one.produit (titre,prix,description,date,url_image,id_genre) VALUES(?,?,?,?,?,?)");
+
 $statement = $dbh->prepare("INSERT INTO mangas_one.produit (titre,prix,description,date,url_image,id_genre) VALUES(:titre, :prix, :description, :date, :image, :categorie)");
 
 
@@ -174,7 +175,7 @@ $statement = $dbh->prepare("INSERT INTO mangas_one.produit (titre,prix,descripti
 $statement->bindParam(':titre', $titre_produit, PDO::PARAM_STR);
 $statement->bindParam(':prix', $prix_produit, PDO::PARAM_STR);
 $statement->bindParam(':description', $description_produit, PDO::PARAM_STR);
-$statement->bindParam(':date', $date_produit, PDO::PARAM_INT);
+$statement->bindParam(':date', $date_produit, PDO::PARAM_STR);
 $statement->bindParam(':image', $image_produit, PDO::PARAM_STR);
 $statement->bindParam(':categorie', $categorie_produit, PDO::PARAM_INT);
 
@@ -188,7 +189,7 @@ if($statement->execute()){
 ?>
 <!-- PROPOSITION D'UN NOUVEAU FORMULAIRE -->
 <div class="text-end">
-    <button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./webmaster.php"> Inscrire un nouveau produit</a>
+    <button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./webmaster.php?webmaster-select=creer"> Inscrire un nouveau produit</a>
 </div>
 
 <?php

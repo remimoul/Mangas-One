@@ -1,8 +1,15 @@
+<?php
+// Authoriser seulement le login webmaster à ouvir cette page
+if(!isset($_SESSION)) {
+    session_start();
+}
+?>
+
 <style>
    .lacouleur{
        padding-top: 3vh;
        background: rgb(131,58,180);
-       background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(173,104,7,1) 100%);
+       background: linear-gradient(90deg, rgba(131,58,180,1) 0%, /*rgba(253,29,29,1) 50%,*/ rgba(173,104,7,1) 100%);
        height: 17vh;
    }
    #colorbutton {
@@ -72,7 +79,7 @@
     <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
             <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-                <input type="search" class="form-control" placeholder="Tu cherche tu trouve..." aria-label="Search">
+                <input type="search" class="form-control" placeholder="Chercher trouver..." aria-label="Search">
             </form>
 
             <div class="text-end">
@@ -80,6 +87,52 @@
 
                 <button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./connexion.php">Connexion</a> </button>
                 <button  type="button" class="btn btn-success"><a id="colorbutton" href="./inscription.php">Inscription</a></button>
+
+                <?php
+                //***** BOUTON ACCESSIBLE SEULEMENT PAR LE WEBMASTER -- ByJAMES *****
+                //*******************************************************************
+                //** Contexte : page
+                //** Requete : rechercher un utilisisater ==> WHERE utilisateur.client = 0
+                //
+                require_once('db_connect.php');
+
+// echo $_SESSION
+
+
+                $notIsset_produit = !isset($_SESSION['client']);
+                if ($notIsset_produit){};
+
+
+                //préparer la requête d'insertion SQL
+                $statement = $dbh->prepare("SELECT * FROM mangas_one.UTILISATEUR WHERE client = 0");
+
+
+
+//Associer les valeurs et exécuter la requête d'insertion
+// $statement->bindParam(':titre', $titre_produit, PDO::PARAM_STR);
+// $statement->bindParam(':prix', $prix_produit, PDO::PARAM_STR);
+// $statement->bindParam(':description', $description_produit, PDO::PARAM_STR);
+// $statement->bindParam(':date', $date_produit, PDO::PARAM_INT);
+// $statement->bindParam(':image', $image_produit, PDO::PARAM_STR);
+// $statement->bindParam(':categorie', $categorie_produit, PDO::PARAM_INT);
+
+if($statement->execute()){
+    print "Votre article a été ajouter !";
+    $statement->closeCursor();
+}else{
+    print $mysqli->error;
+}
+
+
+
+                // if (/*Webmaster*/){
+                //     echo '<button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./webmaster.php">Admin</a> </button>"';
+                // };
+
+
+
+                ?>
+
             </div>
         </div>
     </div>

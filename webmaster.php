@@ -1,10 +1,8 @@
 <?php
-// AUthoriser seulement le login webmaster à ouvir cette page
+// Authoriser seulement le login webmaster à ouvir cette page
 if(!isset($_SESSION)) {
     session_start();
 }
-
-
 ?>
 
 <!-- Webmaster.php -->

@@ -25,7 +25,7 @@ if(!isset($_SESSION)) {
 
 <?php
 echo "MODIFICATION BASE DE DONNEES<br><br>";
-require_once('db_connect.php');
+// require_once('db_connect.php');
 
 
 $notIsset_produit = !isset($_GET['titre']) . !isset($_GET['prix']) . !isset($_GET['date']);
@@ -164,7 +164,7 @@ echo "date : ". $date_produit ."<br>";
 echo "image : ". $image_produit ."<br>";
 echo "catégorie : ". $categorie_produit ."<br>";
 
-
+require_once('db_connect.php');
 //préparer la requête d'insertion SQL
 // $statement = $dbh->prepare("INSERT INTO mangas_one.produit (titre,prix,description,date,url_image,id_genre) VALUES(?,?,?,?,?,?)");
 $statement = $dbh->prepare("INSERT INTO mangas_one.produit (titre,prix,description,date,url_image,id_genre) VALUES(:titre, :prix, :description, :date, :image, :categorie)");
