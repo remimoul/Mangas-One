@@ -117,7 +117,7 @@ if(!isset($_SESSION)) {
 // $statement->bindParam(':categorie', $categorie_produit, PDO::PARAM_INT);
 
 if($statement->execute()){
-    print "Votre article a été ajouter !";
+    echo "putainnnnnn";
     $statement->closeCursor();
 }else{
     print $mysqli->error;

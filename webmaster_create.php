@@ -20,13 +20,12 @@ if(!isset($_SESSION)) {
     <script src="main.js" defer></script>
 </head>
 <body class="light">
-
+  <?php require_once('header.php');?>
+  <div id="main">
 
 <?php
-require_once('header.php');
 echo "CREATION D'ELEMENT BASE DE DONNEES<br><br>";
 require_once('db_connect.php');
-
 
 $notIsset_produit = !isset($_GET['titre']) . !isset($_GET['prix']) . !isset($_GET['date']);
 if ($notIsset_produit){
@@ -180,7 +179,7 @@ $statement->bindParam(':image', $image_produit, PDO::PARAM_STR);
 $statement->bindParam(':categorie', $categorie_produit, PDO::PARAM_INT);
 
 if($statement->execute()){
-    print "Votre article a été ajouter !";
+    echo "Votre article a été ajouter !";
     $statement->closeCursor();
 }else{
     print $mysqli->error;
@@ -199,5 +198,7 @@ if($statement->execute()){
 
 <?php include_once('footer.php'); ?>
 
+
+</div> <!-- END id="main" -->
 </body>
 </html>
