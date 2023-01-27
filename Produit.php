@@ -87,5 +87,5 @@ foreach ($les_produits as $un_produit) {
 ?>
 </body>
 
-<?php require_once('footer.php'); ?>
+<?php //require_once('footer.php'); ?>
 </html>

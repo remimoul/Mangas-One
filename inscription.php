@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
-    <body class="light">
+
 
 </head>
 <body class="light">
@@ -36,6 +36,7 @@ echo "<h1>INSCRIPTION </h1><br><br>";
 
                 if ($_VALID_PASS) {
                     /***** REQUETE SQL -> Valider l'unicité du nom avec un compteur COUNT() ***********/
+                    $dbh =new PDO(DB_DSN, DB_USER, DB_PASSWORD);;
                     $requete_count_email = $dbh->prepare('SELECT COUNT(email) FROM utilisateur WHERE email= :email ');
                     $requete_count_email->execute(array('email' => $_POST['email']));
                     $resulat_count_email = $requete_count_email->fetchcolumn();
