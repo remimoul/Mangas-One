@@ -18,7 +18,7 @@ if(!isset($_SESSION)) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
-    <body class="light">
+
 
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -83,7 +83,8 @@ if (!isset($_GET['titre'])){
 $titre_produit = $_GET['titre'];
 
 /***** REQUETE SQL -> Lecture info utilisateur ***********/
-$requete_suppression_produit = $dbh->prepare("DELETE FROM produit WHERE titre= '$titre_produit'");
+    $dbh =new PDO(DB_DSN, DB_USER, DB_PASSWORD);;
+    $requete_suppression_produit = $dbh->prepare("DELETE FROM produit WHERE titre= '$titre_produit'");
 
 if($requete_suppression_produit->execute()){
     print "Votre article a été supprimé !";
