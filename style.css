@@ -1,0 +1,80 @@
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+#logoone {
+    filter: invert(100%) sepia(1%) saturate(2565%) hue-rotate(236deg) brightness(109%) contrast(100%);
+}
+
+
+body {
+    height : 1800px;
+}
+
+footer {
+    display:inline-block;
+    position: absolute;
+    width: 100%;
+    color:white;
+    top: 1700px;
+}
+
+#logodown {
+    margin-left: 10px;
+}
+
+#logoreseau {
+    margin-right: 10px;
+}
+
+
+body.dark {
+    color: #f1f1f1;
+    background-color: #333;
+}
+
+body.dark #togglemode  {
+        background: #f1f1f1;
+        color: #333;
+}
+
+#colorbutton {
+    color: white;
+    text-decoration: inherit;
+   
+}
+
+
+
+/* PAGE WEBMASTER*/
+#webmaster-select {
+    display:flex;
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    width: 40vw;
+}
+
+#webmaster-section{
+    height: 100% !important;
+    }
+
+
+
+
+/*
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #1c1c1e;
+        color: #fefefe;
+    }
+
+    a {
+        color: #5fa9ee;
+    }
+
+    img {
+        filter: grayscale(20%);
+    }
+}
+    */
