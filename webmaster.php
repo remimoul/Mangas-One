@@ -1,8 +1,10 @@
 <?php
-// Authoriser seulement le login webmaster à ouvir cette page
+// AUthoriser seulement le login webmaster à ouvir cette page
 if(!isset($_SESSION)) {
     session_start();
 }
+
+
 ?>
 
 <!-- Webmaster.php -->
@@ -17,7 +19,7 @@ if(!isset($_SESSION)) {
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="light">
 <?php require_once('header.php'); ?>
 
 
@@ -46,7 +48,7 @@ require_once('db_connect.php');
 if (isset($_GET['webmaster-select']) AND !empty($_GET['webmaster-select'])){
     switch ($_GET['webmaster-select']) {
       case "creer":
-          include_once('./webmaster_create.php');
+          include_once('./controller.php');
           break;
           case "lire":
             include_once('./webmaster_read.php');

@@ -14,7 +14,7 @@
 <?php include_once('header.php');
 
 // requète pour le select dynamique
-$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', 'root');
+$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', '');
 $sql = "SELECT nom FROM genre";
 $resultat = $dbh->query($sql);
 //var_dump($resultat);
@@ -70,19 +70,19 @@ $les_genres = $resultat->fetchAll(PDO::FETCH_ASSOC);
 </form>
 
 <?php
-$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', 'root');
+$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', '');
 
 // selection de le requète en fonction du mode de recherche
 if(isset($_GET['recherche']) AND !empty($_GET['recherche']) AND empty($_GET['genre'])) {
     $recherche = htmlspecialchars($_GET['recherche']);
     $sql = "SELECT * FROM produit INNER JOIN genre ON produit.id_genre=genre.id WHERE produit.titre LIKE '%$recherche%' OR produit.description LIKE '%$recherche%'";
-    //echo 'Requète1';
+    echo 'Requète1';
     $resultat = $dbh->query($sql);
 } 
 elseif(isset($_GET['genre']) AND !empty($_GET['genre']) AND empty($_GET['recherche'])) {
     $genre = htmlspecialchars($_GET['genre']);
     $sql = "SELECT * FROM produit INNER JOIN genre ON produit.id_genre=genre.id WHERE genre.nom = '$genre'";
-    //echo 'Requète2';
+    echo 'Requète2';
     $resultat = $dbh->query($sql);
 }
 elseif(isset($_GET['recherche']) AND !empty($_GET['recherche']) AND isset($_GET['genre']) AND !empty($_GET['genre']))
@@ -93,7 +93,7 @@ elseif(isset($_GET['recherche']) AND !empty($_GET['recherche']) AND isset($_GET[
     //echo '<br>';
     //echo $genre;
     //echo '<br>';
-    //echo 'Requète3';
+    echo 'Requète3';
     $sql = "SELECT * FROM produit INNER JOIN genre ON produit.id_genre=genre.id WHERE genre.nom = '$genre' AND (produit.titre LIKE '%$recherche%' OR produit.description LIKE '%$recherche%')";
     //echo $sql;
     //echo '<br>';
@@ -126,7 +126,7 @@ if (isset($resultat)) {$les_produits = $resultat->fetchAll(PDO::FETCH_ASSOC);}
 if (isset($sql)){
     echo "<pre>";
     //var_dump($les_produits);
-    foreach ($les_produits as $key) 
+    foreach ($les_produits as $key)
     {
         echo "<div>";
             echo "<table><tr>";
@@ -144,10 +144,10 @@ if (isset($sql)){
             echo "<tr>";
                 echo "<td>Genre: </td>";
                 echo "<td>".$key['nom']."</td>";
-            echo '</tr></table>';  
-                
-                
-            
+            echo '</tr></table>';
+
+
+
             echo '<div>';
                 echo "<img src='./".$key['url_image'].".jpeg'/>";
                 echo"<form action='./catalogue.php' method='get'>";
