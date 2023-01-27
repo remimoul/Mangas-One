@@ -24,6 +24,7 @@ if(!isset($_SESSION)) {
 <?php
 echo "PAGE WEBMASTER <br><br>";
 require_once('db_connect.php');
+if ($isset_utilisateur AND $_SESSION['email_utilisateur'] == 'webmaster@gmail.com'){
 ?>
 
 
@@ -62,6 +63,7 @@ if (isset($_GET['webmaster-select']) AND !empty($_GET['webmaster-select'])){
 ?>
 
 <?php include_once('footer.php'); ?>
+<?php }; // if ($isset_utilisateur AND $_SESSION['email_utilisateur'] == 'webmaster@gmail.com' ?>
 
 </body>
 </html>

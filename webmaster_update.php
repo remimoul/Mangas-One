@@ -3,8 +3,6 @@
 if(!isset($_SESSION)) {
     session_start();
 }
-
-
 ?>
 
 <!-- Webmaster.php -->
@@ -25,8 +23,10 @@ if(!isset($_SESSION)) {
 
 <?php
 echo "MODIFICATION BASE DE DONNEES<br><br>";
-// require_once('db_connect.php');
+require_once('db_connect.php');
+require_once('header.php');
 
+if (isset($_SESSION['email_utilisateur']) AND $_SESSION['email_utilisateur'] == 'webmaster@gmail.com'){
 
 $notIsset_produit = !isset($_GET['titre']) . !isset($_GET['prix']) . !isset($_GET['date']);
 if ($notIsset_produit){
@@ -198,6 +198,7 @@ if($statement->execute()){
 </section>
 
 <?php include_once('footer.php'); ?>
+<?php }; // if ($isset_utilisateur AND $_SESSION['email_utilisateur'] == 'webmaster@gmail.com' ?>
 
 </body>
 </html>

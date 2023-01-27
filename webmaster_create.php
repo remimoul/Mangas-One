@@ -3,8 +3,6 @@
 if(!isset($_SESSION)) {
     session_start();
 }
-
-
 ?>
 
 <!-- Webmaster.php -->
@@ -26,6 +24,8 @@ if(!isset($_SESSION)) {
 <?php
 echo "CREATION D'ELEMENT BASE DE DONNEES<br><br>";
 require_once('db_connect.php');
+if (isset($_SESSION['email_utilisateur']) AND $_SESSION['email_utilisateur'] == 'webmaster@gmail.com'){
+
 
 $notIsset_produit = !isset($_GET['titre']) . !isset($_GET['prix']) . !isset($_GET['date']);
 if ($notIsset_produit){
@@ -97,6 +97,9 @@ if ($notIsset_produit){
                     <h6 class="mb-0">Charger une photo</h6>
                   </div>
                   <div class="col-md-9 pe-5">
+
+
+
                     <input name="image" class="form-control form-control-lg" id="formFileLg" type="file"/>
                     <div class="small text-muted mt-2">Charger une image, maximum 50 MB</div>
                   </div>
@@ -146,7 +149,8 @@ if ($notIsset_produit){
 } else{
 
 
-
+// futur fonction insertion_produit($_GET,)
+// futur fonction insertion_produit_panier($_GET,$_GET,$_GET,)
 $titre_produit = $_GET['titre'];
 $prix_produit = $_GET['prix'];
 $description_produit = $_GET['description'];
@@ -165,7 +169,6 @@ echo "catégorie : ". $categorie_produit ."<br>";
 
 
 //préparer la requête d'insertion SQL
-
 $statement = $dbh->prepare("INSERT INTO mangas_one.produit (titre,prix,description,date,url_image,id_genre) VALUES(:titre, :prix, :description, :date, :image, :categorie)");
 
 
@@ -191,13 +194,12 @@ if($statement->execute()){
     <button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./webmaster.php?webmaster-select=creer"> Inscrire un nouveau produit</a>
 </div>
 
-<?php
-}; // END if (isset($isset_produit)){
-?>
+<?php }; // END if (isset($isset_produit)){ ?>
 </section>
 
 <?php include_once('footer.php'); ?>
 
+<?php }; // if ($isset_utilisateur AND $_SESSION['email_utilisateur'] == 'webmaster@gmail.com' ?>
 
 </div> <!-- END id="main" -->
 </body>

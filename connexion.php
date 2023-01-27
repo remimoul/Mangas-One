@@ -20,7 +20,7 @@ if(!isset($_SESSION)) {
 <body class="light">
 <?php require_once ('header.php');
 require_once('db_connect.php');
-echo "<h1>PAGE WEBMASTER </h1><br><br>";
+echo "<h1>CONNEXION </h1><br><br>";
 ?>
 
 <?php
@@ -29,8 +29,6 @@ echo "<h1>PAGE WEBMASTER </h1><br><br>";
              * **/
             $_ISSET = isset($_POST['email']) . isset($_POST['password']);
             $_NO_EMPTY = !empty($_POST['email']) . !empty($_POST['password']);
-
-
 
 
             if ($_ISSET && $_NO_EMPTY) {
@@ -95,25 +93,25 @@ echo "<h1>PAGE WEBMASTER </h1><br><br>";
 
 
                             echo '<h1>Vérification de données</h1>';
-                            echo '<meta http-equiv="refresh" content="2;url=http://localhost:8888/Mangas-one/index.php">';
+                            echo '<meta http-equiv="refresh" content="8;url=http://localhost:8888/Mangas-one/index.php">';
 
                         } else {
                             echo '<p class="p1"> ***Erreur 3*** Votre mot de passe et/ou identifiant est incorrect :::: affichage test ' . $_SESSION['email_post'] . '</p>';
                             echo '<p class="p1"> l\'identification a échoué. <br/> Vous allez être redirigés vers la page d\'identification.</p>';
-                                                        /* echo '<!-- BETA LINK <meta http-equiv="refresh" content="2;url=http://localhost/Mangas-one/connexion.php"> -->';*/
+                            echo '<meta http-equiv="refresh" content="2;url=http://localhost:8888/Mangas-one/inscription.php">';
 
                         } // END - $_SESSION['email_sql'] == $_SESSION['email_post'] and  $_SESSION['mdp_sql'] == $_SESSION['mdp_post'])
                     } else {
                         echo '<p class="p1"> ***Erreur 2*** Votre mot de passe et/ou identifiant est incorrect</p>';
                         echo '<p class="p1"> l\'identification a échoué. <br/> Vous allez être redirigés vers la page d\'identification.</p>';
-                            /* echo '<!-- BETA LINK <meta http-equiv="refresh" content="2;url=http://localhost/Mangas-one/connexion.php"> -->';*/
+                        echo '<meta http-equiv="refresh" content="4;url=http://localhost:8888/Mangas-one/inscription.php">';
                     } // END - isset($_SESSION['email_sql']) and !empty($_SESSION['email_sql']
 
                     $requete->closeCursor();
                 } else {
                     echo '<p class="p1"> ***Erreur 1*** Votre mot de passe et/ou identifiant est incorrect</p>';
                     echo '<p class="p1"> l\'identification a échoué. <br/> Vous allez être redirigés vers la page d\'identification.</p>';
-                                /* echo '<!-- BETA LINK <meta http-equiv="refresh" content="2;url=http://localhost/Mangas-one/connexion.php"> -->';*/
+                    echo '<meta http-equiv="refresh" content="2;url=http://localhost:8888/Mangas-one/inscription.php">';
                 }; // END - isset($_SESSION['email_post']) and isset($_SESSION['mdp_post'])
 
 

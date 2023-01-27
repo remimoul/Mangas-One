@@ -1,5 +1,4 @@
 <?php
-// Authoriser seulement le login webmaster à ouvir cette page
 if(!isset($_SESSION)) {
     session_start();
 }
@@ -67,7 +66,7 @@ if(!isset($_SESSION)) {
                         </a>
                     </li>
                     <li>
-                        <a href="./webmaster.php" class="nav-link text-white">
+                        <a href="./profile_client.php" class="nav-link text-white">
                             <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
                             Client
                         </a>
@@ -85,49 +84,21 @@ if(!isset($_SESSION)) {
             <div class="text-end">
                 <button id="togglemode" type="button" class="btn btn-dark">Light</button>
 
-                <button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./connexion.php">Connexion</a> </button>
-                <button  type="button" class="btn btn-success"><a id="colorbutton" href="./inscription.php">Inscription</a></button>
-
                 <?php
-                //***** BOUTON ACCESSIBLE SEULEMENT PAR LE WEBMASTER -- ByJAMES *****
+                $isset_utilisateur = isset($_SESSION['email_utilisateur']);
+                if ($isset_utilisateur){
+                echo '<button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./deconnexion.php">Déconnexion</a> </button>';
+                } else {
+                echo '<button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./connexion.php">Connexion</a> </button>';
+                echo '<button  type="button" class="btn btn-success"><a id="colorbutton" href="./inscription.php">Inscription</a></button>';
+                };
+
                 //*******************************************************************
-                //** Contexte : page
-                //** Requete : rechercher un utilisisater ==> WHERE utilisateur.client = 0
-                //
-                require_once('db_connect.php');
-
-// echo $_SESSION
-
-
-                $notIsset_produit = !isset($_SESSION['client']);
-                if ($notIsset_produit){};
-
-
-                //préparer la requête d'insertion SQL
-                $statement = $dbh->prepare("SELECT * FROM mangas_one.UTILISATEUR WHERE client = 0");
-
-
-
-//Associer les valeurs et exécuter la requête d'insertion
-// $statement->bindParam(':titre', $titre_produit, PDO::PARAM_STR);
-// $statement->bindParam(':prix', $prix_produit, PDO::PARAM_STR);
-// $statement->bindParam(':description', $description_produit, PDO::PARAM_STR);
-// $statement->bindParam(':date', $date_produit, PDO::PARAM_INT);
-// $statement->bindParam(':image', $image_produit, PDO::PARAM_STR);
-// $statement->bindParam(':categorie', $categorie_produit, PDO::PARAM_INT);
-
-if($statement->execute()){
-    echo "putainnnnnn";
-    $statement->closeCursor();
-}else{
-    print $mysqli->error;
-}
-
-
-
-                // if (/*Webmaster*/){
-                //     echo '<button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./webmaster.php">Admin</a> </button>"';
-                // };
+                //---- BOUTON ACCESSIBLE SEULEMENT PAR LE WEBMASTER
+                //*******************************************************************
+                if ($isset_utilisateur AND $_SESSION['email_utilisateur'] == 'webmaster@gmail.com'){
+                echo '<button  type="button" class="btn btn-success"><a id="colorbutton" href="./webmaster.php">Admin</a></button>';
+                };
 
 
 
