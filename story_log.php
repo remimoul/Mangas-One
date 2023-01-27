@@ -30,7 +30,7 @@ echo "<h1>STORY LOG</h1><br><br>";
 <p id="text_objectif">Le projet contient une base de données SQL composée de plusieurs tables. Chaque table possède une clé primaire. Certaines tables contiennent une clé étrangère.<p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim vero praesentium officiis doloribus optio? Voluptas perferendis magni maxime, non consequatur sapiente eius inventore, repellat expedita tempora voluptatem repellendus quisquam optio, recusandae quibusdam. Magnam aut blanditiis tempora ducimus quos temporibus minima quaerat reprehenderit ipsam totam. Soluta vel aliquid, laboriosam distinctio, laborum amet nulla reprehenderit consectetur numquam voluptas enim reiciendis placeat ab quod optio velit adipisci vitae.<p>
+<p id="text_FLOW"> Done. ----- Réalisé par James, Myles et Rémy. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -43,7 +43,7 @@ Un utilisateur peut ajouter, modifier ou supprimer des produits gérés par le s
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW"> Done. ----- Réalisé par James.<p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -54,7 +54,7 @@ Un utilisateur peut ajouter, modifier ou supprimer des produits gérés par le s
 <p id="text_objectif">L’utilisateur peut rechercher des produits selon leur nom et/ou leur description. <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ----- Réalisé par Myles. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -65,7 +65,7 @@ Un utilisateur peut ajouter, modifier ou supprimer des produits gérés par le s
 <p id="text_objectif">’utilisateur peut rechercher des produits selon leur catégorie. <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ----- Réalisé par Myles. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -78,7 +78,7 @@ L'utilisateur doit pouvoir choisir le thème d'affichage des pages web du site. 
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ----- Réalisé par Rémy. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -91,7 +91,7 @@ Le projet permet de gérer au moins une information de type « DATE ». Dans une
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">TODO. ----- La date est actualisée seulement à l'ajout produit dans la base. Réalisé par James. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -103,7 +103,7 @@ Le projet permet de gérer au moins une information de type « DATE ». Dans une
 Une partie du projet est à accès restreint. Un utilisateur autorisé a la possibilité de se connecter pour accéder à cette partie du projet. Il peut également se déconnecter. Lorsqu’un utilisateur non autorisé essaye d’accéder directement à l’espace restreint, il est automatiquement redirigé vers une page en libre accès.<p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ---- Seul l' administrateur peut gérer les produit. Réalisé par James.  <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -116,7 +116,7 @@ Le site permet à l’utilisateur de gérer un « panier ». L’utilisateur peu
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">TODO ---- In progress. Rémy s'y colle. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -129,7 +129,7 @@ Les utilisateurs peuvent continuer leur visite avec leur panier, même après av
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">TODO<p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -142,7 +142,7 @@ Le site permet l’upload de fichiers. Ces fichiers peuvent être des images, de
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ---- On peut uploder des images qui seront stockées dans le répertoire "image". Réalisé par Rémy. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -155,7 +155,7 @@ Le site contient plusieurs formulaires HTML utilisant des méthodes GET et au mo
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ---- Les deux méthodes sont bien utilisées. Réalisé par toute l'équipe.<p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -168,7 +168,7 @@ Le site contient au moins un formulaires HTML avancé avec une liste d’options
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ---- Sur plusieurs formulaires. Réalisé par toute l'équipe.<p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -180,7 +180,7 @@ Le site contient au moins un formulaires HTML avancé avec une liste d’options
 Un fichier « Changelog.txt » contient la description de chaque US réalisée et des US qui pourraient être réalisées ultérieurement.<p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. Réalisé par James. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -192,7 +192,7 @@ Un fichier « Changelog.txt » contient la description de chaque US réalisée e
 Le site met en œuvre un framework CSS front-end.<p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ----- Utilisation de bootstrap. Réalisé par Rémy. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -203,7 +203,7 @@ Le site met en œuvre un framework CSS front-end.<p>
 <p id="text_objectif"> <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW">
+<p id="text_FLOW">TODO. C'était prévu....<p>
 Un fichier PHP contient des fonctions qui sont utilisées dans plusieurs autres fichiers PHP. Certaines de ces fonctions retournent du code HTML.<p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
@@ -217,7 +217,7 @@ Coder en respectant les bonnes pratiques : convention de nommage des fichiers, t
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">DONE. ---- Jocker. Snake-Camel case halloween avec option franglais! <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -229,7 +229,7 @@ Coder en respectant les bonnes pratiques : convention de nommage des fichiers, t
 Coder en respectant les bonnes pratiques : absence de duplication de code, code PHP respectant des conventions de nommage et code PHP documenté.<p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">TODO <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -241,7 +241,7 @@ Coder en respectant les bonnes pratiques : absence de duplication de code, code 
 Le principe des sessions est mise en œuvre de manière pertinente sur quelques pages du projet.<p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ---- Utilisé pour le webmaster et l'utilisateur. Réalisé par James. <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -254,7 +254,7 @@ Coder en considérant tous les cas de figure. Par exemple, une recherche ne four
 <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW"> <p>
+<p id="text_FLOW">Done. ----- Un message apparait lors d'une recherche vide.  <p>
 <p>*************************************************************************** <p>
 <p>*************************************************************************** <p>
 <br><br><br><br><br>
@@ -265,7 +265,7 @@ Coder en considérant tous les cas de figure. Par exemple, une recherche ne four
 <p id="text_objectif"> <p>
 <br>
 <h5>FLOW</h5>
-<p id="text_FLOW">
+<p id="text_FLOW">DONE ---- Myles <p>
 Créer une réalisation de type « projet » sur vos profils LinkedIn afin de présenter votre projet de cette semaine de formation.
 <p>
 <p>*************************************************************************** <p>

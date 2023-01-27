@@ -63,8 +63,8 @@ if(isset($_POST["submit"]) && !empty($_FILES["photo"]["name"])){
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
 </head>
-<body class="light">
 
+<body class="light">
 <?php require_once('header.php'); ?>
 
 <section  id="webmaster-section" class="vh-100" >

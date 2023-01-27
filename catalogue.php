@@ -12,9 +12,9 @@
 </head>
 <body class="light">
 <?php include_once('header.php');
+require_once('db_connect.php');
 
 // requète pour le select dynamique
-$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', '');
 $sql = "SELECT nom FROM genre";
 $resultat = $dbh->query($sql);
 //var_dump($resultat);
@@ -34,7 +34,7 @@ $les_genres = $resultat->fetchAll(PDO::FETCH_ASSOC);
     //     echo "<br>";
     //     echo $key['description'];
     //     echo "<br>";
-        
+
     //     echo "<br>";
     //     echo "<br>";
     // }
@@ -45,11 +45,11 @@ $les_genres = $resultat->fetchAll(PDO::FETCH_ASSOC);
     <!--<label for="name"></label>-->
 <!--barre de recherche du catalogue-->
         <input type="text" name="recherche" id="rechercheId" placeholder="recherche" >
-<!--select pour la recherche par catégorie--> 
+<!--select pour la recherche par catégorie-->
         <select id="genre" name="genre">
             <option selected></option>
     <?php
-            foreach ($les_genres as $key) 
+            foreach ($les_genres as $key)
             {
            // echo $key['nom'];
             echo "<option name=".$key['nom'].">".$key['nom']."</option>";
@@ -62,7 +62,7 @@ $les_genres = $resultat->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <br>
     <div>
-<!---->        
+<!---->
     <input type="submit" value="Rechercher">
     </div>
     <br>
@@ -70,7 +70,6 @@ $les_genres = $resultat->fetchAll(PDO::FETCH_ASSOC);
 </form>
 
 <?php
-$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', '');
 
 // selection de le requète en fonction du mode de recherche
 if(isset($_GET['recherche']) AND !empty($_GET['recherche']) AND empty($_GET['genre'])) {
@@ -78,7 +77,7 @@ if(isset($_GET['recherche']) AND !empty($_GET['recherche']) AND empty($_GET['gen
     $sql = "SELECT * FROM produit INNER JOIN genre ON produit.id_genre=genre.id WHERE produit.titre LIKE '%$recherche%' OR produit.description LIKE '%$recherche%'";
     echo 'Requète1';
     $resultat = $dbh->query($sql);
-} 
+}
 elseif(isset($_GET['genre']) AND !empty($_GET['genre']) AND empty($_GET['recherche'])) {
     $genre = htmlspecialchars($_GET['genre']);
     $sql = "SELECT * FROM produit INNER JOIN genre ON produit.id_genre=genre.id WHERE genre.nom = '$genre'";

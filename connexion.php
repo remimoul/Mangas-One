@@ -17,6 +17,7 @@ if(!isset($_SESSION)) {
     <script src="main.js" defer></script>
 
 </head>
+
 <body class="light">
 <?php require_once ('header.php');
 require_once('db_connect.php');
