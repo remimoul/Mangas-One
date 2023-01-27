@@ -113,15 +113,29 @@ if ($notIsset_produit){
                     <h6 class="mb-0">Catégorie</h6>
                   </div>
                   <div class="col-md-9 pe-5">
-                    <input name="categorie"  class="form-control form-control-lg" type="number" min=1 max=3/>
-                  </div>
+                    <!-- <input name="categorie"  class="form-control form-control-lg" type="number" min=1 max=3/> -->
+
+                      <div>
+                        <input type="radio" name="categorie" id="Manga"  value="manga" checked>
+                        <label for="huey">Manga</label>
+                      </div>
+
+                      <div>
+                        <input type="radio" name="categorie" id="film"  value="video">
+                        <label for="video">Video</label>
+                      </div>
+
+                      <div>
+                        <input type="radio" name="categorie" id="serie"  value="serie">
+                        <label for="serie">Serie</label>
+                      </div>
+                <br>
                 </div>
 
                 <hr class="mx-n3">
                 <div class="px-5 py-4">
                   <button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
                 </div>
-
               </div>
             </div>
 
