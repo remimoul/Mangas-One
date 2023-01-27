@@ -17,9 +17,8 @@ if(!isset($_SESSION)) {
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
 </head>
-<body class="light">
-  <?php require_once('header.php');?>
-  <div id="main">
+<body class="d-flex flex-column min-vh-100">
+
 
 <?php
 echo "CREATION D'ELEMENT BASE DE DONNEES<br><br>";
@@ -36,7 +35,7 @@ if ($notIsset_produit){
     <!-- SECTION FORMULAIRE PRODUIT-->
     <section  id="webmaster-section" class="vh-100" style="background-color: #b8baba;">
 
-    <form action="webmaster_create.php" method="GET">
+    <form action="" method="GET">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-xl-9">
@@ -112,23 +111,8 @@ if ($notIsset_produit){
                     <h6 class="mb-0">Catégorie</h6>
                   </div>
                   <div class="col-md-9 pe-5">
-                    <!-- <input name="categorie"  class="form-control form-control-lg" type="number" min=1 max=3/> -->
-
-                      <div>
-                        <input type="radio" name="categorie" id="Manga"  value="manga" checked>
-                        <label for="huey">Manga</label>
-                      </div>
-
-                      <div>
-                        <input type="radio" name="categorie" id="film"  value="video">
-                        <label for="video">Video</label>
-                      </div>
-
-                      <div>
-                        <input type="radio" name="categorie" id="serie"  value="serie">
-                        <label for="serie">Serie</label>
-                      </div>
-                <br>
+                    <input name="categorie"  class="form-control form-control-lg" type="number" min=1 max=3/>
+                  </div>
                 </div>
 
                 <hr class="mx-n3">
@@ -148,9 +132,17 @@ if ($notIsset_produit){
 <?php
 } else{
 
+    // function VALID_DONNEES($donnees)
+    // {
+    //     $donnees = trim($donnees);
+    //     $donnees = stripslashes($donnees);
+    //     $donnees = htmlspecialchars($donnees);
+    //     $donnees = strip_tags($donnees);
+    //     return $donnees;
+    // }
 
-// futur fonction insertion_produit($_GET,)
-// futur fonction insertion_produit_panier($_GET,$_GET,$_GET,)
+
+
 $titre_produit = $_GET['titre'];
 $prix_produit = $_GET['prix'];
 $description_produit = $_GET['description'];
@@ -174,24 +166,24 @@ $statement = $dbh->prepare("INSERT INTO mangas_one.produit (titre,prix,descripti
 
 
 //Associer les valeurs et exécuter la requête d'insertion
-$statement->bindParam(':titre', $titre_produit, PDO::PARAM_STR);
-$statement->bindParam(':prix', $prix_produit, PDO::PARAM_STR);
-$statement->bindParam(':description', $description_produit, PDO::PARAM_STR);
-$statement->bindParam(':date', $date_produit, PDO::PARAM_STR);
-$statement->bindParam(':image', $image_produit, PDO::PARAM_STR);
+$statement->bindParam(':titre', $titre_produit, PDO::PARAM_STR_CHAR);
+$statement->bindParam(':prix', $prix_produit, PDO::PARAM_INT);
+$statement->bindParam(':description', $description_produit, PDO::PARAM_STR_CHAR);
+$statement->bindParam(':date', $date_produit, PDO::PARAM_INT);
+$statement->bindParam(':photo', $image_produit, PDO::PARAM_INT);
 $statement->bindParam(':categorie', $categorie_produit, PDO::PARAM_INT);
 
 if($statement->execute()){
-    echo "Votre article a été ajouter !";
+    print "Votre article a été ajouter !";
     $statement->closeCursor();
 }else{
-    print $mysqli->error;
+    print "merde";
 }
 
 ?>
 <!-- PROPOSITION D'UN NOUVEAU FORMULAIRE -->
 <div class="text-end">
-    <button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./webmaster.php?webmaster-select=creer"> Inscrire un nouveau produit</a>
+    <button  type="button" class="btn btn-secondary"><a id="colorbutton" href="./webmaster.php"> Inscrire un nouveau produit</a>
 </div>
 
 <?php }; // END if (isset($isset_produit)){ ?>
@@ -199,8 +191,8 @@ if($statement->execute()){
 
 <?php include_once('footer.php'); ?>
 
-<?php }; // if ($isset_utilisateur AND $_SESSION['email_utilisateur'] == 'webmaster@gmail.com' ?>
 
 </div> <!-- END id="main" -->
+<?php }; // if ($isset_utilisateur AND $_SESSION['email_utilisateur'] == 'webmaster@gmail.com' ?>
 </body>
 </html>

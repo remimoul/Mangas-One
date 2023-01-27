@@ -42,7 +42,9 @@ body.dark #togglemode  {
 #colorbutton {
     color: white;
     text-decoration: inherit;
+   
 }
+
 
 
 /* PAGE WEBMASTER*/
@@ -56,6 +58,9 @@ body.dark #togglemode  {
 #webmaster-section{
     height: 100% !important;
     }
+
+
+
 
 /*
 @media (prefers-color-scheme: light) {

@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mangas One - Catalogue</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="light">
 <?php include_once('header.php');
 
 // requète pour le select dynamique
-$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', 'root');
+$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', '');
 $sql = "SELECT nom FROM genre";
 $resultat = $dbh->query($sql);
 //var_dump($resultat);
@@ -67,7 +70,7 @@ $les_genres = $resultat->fetchAll(PDO::FETCH_ASSOC);
 </form>
 
 <?php
-$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', 'root');
+$dbh = new PDO('mysql:host=localhost; dbname=mangas_one', 'root', '');
 
 // selection de le requète en fonction du mode de recherche
 if(isset($_GET['recherche']) AND !empty($_GET['recherche']) AND empty($_GET['genre'])) {
@@ -123,18 +126,40 @@ if (isset($resultat)) {$les_produits = $resultat->fetchAll(PDO::FETCH_ASSOC);}
 if (isset($sql)){
     echo "<pre>";
     //var_dump($les_produits);
-    foreach ($les_produits as $key) {
-           echo "Titre: ".$key['titre'];
-           echo "<br>";
-            echo "Prix: ".$key['prix'];
-             echo "<br>";
-             echo "Résumé: ".$key['description'];
+    foreach ($les_produits as $key)
+    {
+        echo "<div>";
+            echo "<table><tr>";
+                echo "<td>Titre: </td>";
+                echo "<td>".$key['titre']."</td>";
+            echo '</tr>';
+            echo "<tr>";
+                echo "<td>Prix: </td>";
+                echo "<td>".$key['prix']." €</td>";
+            echo '</tr>';
+            echo "<tr>";
+                echo "<td>Résumé: </td>";
+                echo "<td>".$key['description']."</td>";
+            echo '</tr>';
+            echo "<tr>";
+                echo "<td>Genre: </td>";
+                echo "<td>".$key['nom']."</td>";
+            echo '</tr></table>';
+
+
+
+            echo '<div>';
+                echo "<img src='./".$key['url_image'].".jpeg'/>";
+                echo"<form action='./catalogue.php' method='get'>";
+                $totre = $key['titre'];
+                //echo '<input name="toto" value="'.$key['titre'].'">';
+                echo'<input type="submit" name="toto" value="'.$key['titre'].'" >';
+                echo '</form>';
+
+            echo '</div>';
             echo "<br>";
-            echo 'genre: '.$key['nom'];
-            echo "<br>";
-            echo "<img src='./".$key['url_image'].".jpeg'/>";
-            echo "<br>";
-            echo "<br>";
+        echo "<br>";
+        echo '</div>';
     }
     echo "<pre>";
 } else {
@@ -147,6 +172,16 @@ if (isset($sql)){
 unset($recherche);
 unset($resultat);
 unset($les_produits);
+
+
+//echo $_SESSION['panier'] = $_GET['toto'];
+
+
+if (isset($_GET['toto']) ){
+//futur panier
+echo $_SESSION['panier'] = $_GET['toto'];
+
+}
 
 ;
 ?>
