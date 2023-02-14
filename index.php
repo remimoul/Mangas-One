@@ -34,7 +34,7 @@ if(!isset($_SESSION)) {
     <br><br>
 </div>
     <div style="margin-left: 15vw;">
-        <?php require_once('./catalogue.php');?>
+<!--        --><?php //require_once('./search.php');?>
     </div>
 
 </body>

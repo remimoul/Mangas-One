@@ -45,7 +45,7 @@ $resultat_Rqt = $requete_message_utilisateur->fetchAll();
     };
 } else {
        echo '<p class="p1">  Vous n\'êtes pas connecté <br/> Vous allez être redirigés vers la page d\'accueil.</p>';
-       echo '<meta http-equiv="refresh" content="5;url=http://localhost/Mangas-One/index.php">';
+       echo '<meta http-equiv="refresh" content="5;url=http://localhost/Mangas-one/index.php">';
 };
 
 ?>

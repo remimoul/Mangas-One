@@ -147,14 +147,35 @@ if(isset($_POST["submit"]) && !empty($_FILES["photo"]["name"])){
                                     <h6 class="mb-0">Catégorie</h6>
                                 </div>
                                 <div class="col-md-9 pe-5">
-                                    <input name="id_genre"  class="form-control form-control-lg" type="number" min=1 max=3/>
+<!--                                    <input name="id_genre"  class="form-control form-control-lg" type="number" min=1 max=3/>-->
+                                    <div class="form-check">
+                                        <input name="id_genre" class="form-check-input" type="radio" value="1" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Mangas
+                                        </label>
+
+
+                                    </div>
+                                    <div class="form-check">
+                                        <input name="id_genre" class="form-check-input" type="radio" value="2" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Vidéo
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input name="id_genre" class="form-check-input" type="radio" value="3" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Série
+                                        </label>
+
+                                    </div>
                                 </div>
                             </div>
 
                             <hr class="mx-n3">
                             <div class="px-5 py-4">
                                 <button name="submit" type="submit" class="btn btn-primary btn-lg">Ajouter</button>
-                                <button id="reloadbutton" type="button" class="btn btn-success"><a id="colorbutton" href="./controller.php">Ajouter nouveau Produit ?</a></button>
+<!--                                <button id="reloadbutton" type="button" class="btn btn-success"><a id="colorbutton" href="./controller.php">Ajouter nouveau Produit ?</a></button>-->
                             </div>
                             <?php
                             echo'<img alt="photo" src="' .$targetFilePath. '" style="width:15%" />'."<br>";

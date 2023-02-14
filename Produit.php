@@ -75,6 +75,7 @@ foreach ($les_produits as $un_produit) {
                     <li><?php echo "Prix : ".$un_produit['prix'] ."€" ?></li>
                 </ul>
                 <button type="button" class="w-100 btn btn-lg btn-outline-primary">Acheter</button>
+
             </div>
         </div>
     </div>
@@ -87,5 +88,5 @@ foreach ($les_produits as $un_produit) {
 ?>
 </body>
 
-<?php //require_once('footer.php'); ?>
+<?php require_once('footer.php'); ?>
 </html>
