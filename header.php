@@ -3,7 +3,7 @@ if(!isset($_SESSION)) {
     session_start();
 }
 ?>
-
+<link rel="stylesheet" href="style.css" />
 <style>
    .lacouleur{
        padding-top: 3vh;
@@ -15,6 +15,8 @@ if(!isset($_SESSION)) {
        color: white;
        text-decoration: inherit;
    }
+
+
 </style>
 
 
@@ -77,12 +79,16 @@ if(!isset($_SESSION)) {
     </div>
     <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
-            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-                <input type="search" class="form-control" placeholder="Chercher trouver..." aria-label="Search">
+            <form  class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+<!--                <input type="search" class="form-control" placeholder="Chercher trouver..." aria-label="Search">-->
+                <button type="button" class="btn btn-danger"><a id="colorbutton" href="search.php">Search</a></button>
+
             </form>
 
+
             <div class="text-end">
-                <button id="togglemode" type="button" class="btn btn-dark">Light</button>
+
+
 
                 <?php
                 $isset_utilisateur = isset($_SESSION['email_utilisateur']);
@@ -100,11 +106,13 @@ if(!isset($_SESSION)) {
                 echo '<button  type="button" class="btn btn-success"><a id="colorbutton" href="./webmaster.php">Admin</a></button>';
                 };
 
-
-
                 ?>
 
             </div>
+
+            <form action="./variables.php" method="POST">
+                <button id="togglemode" type="button" name="btnDarkTheme" value="1" class="btn btn-dark">Light</button>
+            </form>
         </div>
     </div>
 </header>

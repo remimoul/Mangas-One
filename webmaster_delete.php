@@ -3,8 +3,6 @@
 if(!isset($_SESSION)) {
     session_start();
 }
-
-
 ?>
 
 <!-- Webmaster.php -->
@@ -47,7 +45,7 @@ if (!isset($_GET['titre'])){
           <div class="col-xl-9">
 
 
-            <h1 class="text-white mb-4">SUPPRESSION D'ELEMENTS PRODUIT</h1>
+            <h1 class="text-white mb-4">SUPPRESSION PRODUIT</h1>
 
             <div class="card" style="border-radius: 15px;">
               <div class="card-body">
@@ -83,13 +81,13 @@ if (!isset($_GET['titre'])){
 $titre_produit = $_GET['titre'];
 
 /***** REQUETE SQL -> Lecture info utilisateur ***********/
-$requete_suppression_produit = $dbh->prepare("DELETE FROM produit WHERE titre= '$titre_produit'");
+$requete_suppression_produit = $dbh->prepare("DELETE FROM produit WHERE ID= ?");
 
 if($requete_suppression_produit->execute()){
     print "Votre article a été supprimé !";
     $requete_suppression_produit->closeCursor();
 }else{
-    print $mysqli->error;
+    print $requete_suppression_produit->error;
 }
 
 ?>

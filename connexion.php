@@ -40,7 +40,6 @@ echo "<h1>CONNEXION </h1><br><br>";
                 $mdp_post = $_SESSION['mdp_post'];
 
                 /***** REQUETE SQL -> Sélectionner les données mdp et email ***********/
-                $dbh =new PDO(DB_DSN, DB_USER, DB_PASSWORD);
                 $requete = $dbh->prepare('SELECT DISTINCT email, mot_de_passe FROM utilisateur WHERE email= :email AND mot_de_passe= :mdp');
                 $requete->execute(array('email' => $email_post, 'mdp' => $mdp_post));
 
@@ -95,25 +94,25 @@ echo "<h1>CONNEXION </h1><br><br>";
 
 
                             echo '<h1>Vérification de données</h1>';
-                            echo '<meta http-equiv="refresh" content="8;url=http://localhost/Mangas-One/index.php">';
+                            echo '<meta http-equiv="refresh" content="8;url=http://localhost/Mangas-one/index.php">';
 
                         } else {
                             echo '<p class="p1"> ***Erreur 3*** Votre mot de passe et/ou identifiant est incorrect :::: affichage test ' . $_SESSION['email_post'] . '</p>';
                             echo '<p class="p1"> l\'identification a échoué. <br/> Vous allez être redirigés vers la page d\'identification.</p>';
-                            echo '<meta http-equiv="refresh" content="2;url=http://localhost/Mangas-One/inscription.php">';
+                            echo '<meta http-equiv="refresh" content="2;url=http://localhost/Mangas-one/inscription.php">';
 
                         } // END - $_SESSION['email_sql'] == $_SESSION['email_post'] and  $_SESSION['mdp_sql'] == $_SESSION['mdp_post'])
                     } else {
                         echo '<p class="p1"> ***Erreur 2*** Votre mot de passe et/ou identifiant est incorrect</p>';
                         echo '<p class="p1"> l\'identification a échoué. <br/> Vous allez être redirigés vers la page d\'identification.</p>';
-                        echo '<meta http-equiv="refresh" content="4;url=http://localhost/Mangas-One/inscription.php">';
+                        echo '<meta http-equiv="refresh" content="4;url=http://localhost/Mangas-one/inscription.php">';
                     } // END - isset($_SESSION['email_sql']) and !empty($_SESSION['email_sql']
 
                     $requete->closeCursor();
                 } else {
                     echo '<p class="p1"> ***Erreur 1*** Votre mot de passe et/ou identifiant est incorrect</p>';
                     echo '<p class="p1"> l\'identification a échoué. <br/> Vous allez être redirigés vers la page d\'identification.</p>';
-                    echo '<meta http-equiv="refresh" content="2;url=http://localhost/Mangas-One/inscription.php">';
+                    echo '<meta http-equiv="refresh" content="2;url=http://localhost/Mangas-one/inscription.php">';
                 }; // END - isset($_SESSION['email_post']) and isset($_SESSION['mdp_post'])
 
 
