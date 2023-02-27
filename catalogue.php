@@ -91,7 +91,7 @@ elseif(isset($_GET['recherche']) AND !empty($_GET['recherche']) AND isset($_GET[
     $genre = htmlspecialchars($_GET['genre']);
     //echo $recherche;
     //echo '<br>';
-    //echo $genre;
+    //echo $genre;r
     //echo '<br>';
     echo 'Requète3';
     $sql = "SELECT * FROM produit INNER JOIN genre ON produit.id_genre=genre.id WHERE genre.nom = '$genre' AND (produit.titre LIKE '%$recherche%' OR produit.description LIKE '%$recherche%')";

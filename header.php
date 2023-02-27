@@ -38,6 +38,7 @@ if(!isset($_SESSION)) {
 </svg>
 
 <header>
+
 <!--    class="px-3 py-2 text-bg-dark"-->
     <div class="lacouleur">
         <div class="container">
